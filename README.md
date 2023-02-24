@@ -1,2 +1,2 @@
 # ServiceNow
-The puspose behind this repository is to store code relevant to ServiceNow
+The purpose behind this repository is to store code relevant to ServiceNow
