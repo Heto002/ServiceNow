@@ -11,12 +11,95 @@ for (var key in obj) {
   gs.print(key);
 }
 
+
+/***************************************************************************************/
 //Displays all values of the obj object
 for (var key in obj) {
   gs.print(obj[key]);
 }
 
+
+/***************************************************************************************/
 //Print current.property
 for (var key in obj) {
   gs.print(current[obj[key]);
 }
+
+
+/*****************************************************************************************/
+/*
+Sample of storing field values into the current object
+Everytime you use gr.number or current.number, the object returns of type of "GlideElement".
+This is why you need to append a value with + '' or + toString() to convert a value to type of "string"
+*/
+
+var current = new GlideRecord("incident");
+current.get("0a0163a18738e11033dc1f073cbb359f");
+
+var obj = {
+    "number":"",
+    "short_description":""
+};
+
+for (var key in object){
+    obj[key] = current[key].toString();
+}
+
+gs.print(JSON.stringify(obj));
+
+
+/*********************************************************************************************/
+/*
+Using objects, we can store multiple records and the field values for each record
+*/
+
+var obj = {
+    "short_description":"",
+    "description":""
+};
+
+var record = {};
+
+var gr = new GlideRecord("incident");
+gr.addEncodedQuery("caller_id=62826bf03710200044e0bfc8bcbe5df1")
+gr.query();
+
+while(gr.next()){
+    for (var key in obj){
+        obj[key] = gr[key].toString();
+    }
+
+    var str = JSON.stringify(obj);
+    var parser = new JSONParser();
+    var newObj = parser.parse(str);
+    record[gr.number] = newObj;
+}
+
+gs.print(JSON.stringify(record));
+
+
+/******************************************************************************************/
+/*
+Same as the above, but using arrays
+*/
+
+var obj = {};
+var arr = ["short_description","description"];
+var record = {};
+
+var gr = new GlideRecord("incident");
+gr.addEncodedQuery("caller_id=62826bf03710200044e0bfc8bcbe5df1")
+gr.query();
+
+while(gr.next()){
+  for(var i=0;i<arr.length;i++){
+        obj[arr[i]] = gr[arr[i]].toString();
+  }
+
+  var str = JSON.stringify(obj);
+  var parser = new JSONParser();
+  var newObj = parser.parse(str);
+  record[gr.number] = newObj;
+}
+
+gs.print(JSON.stringify(record));
