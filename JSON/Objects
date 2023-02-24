@@ -1,0 +1,17 @@
+//All of the below work for assigning values to an object
+
+//Object Literal Notation - Changes made here affect the entire script
+var myObj = {
+  property_one: "Hello",
+  property_two: 19,
+  property_three: ["Alpha","Beta"]
+};
+
+myObj.property_three = "World";
+myObj["property_four"] = true;
+
+
+//Object Constructor Notation - Changes made here will not affect other instances
+var Dog = {};
+var dog1 = new Dog("Fido",["Smart,"Lucky"],10);
+var dog2 = new Dog("Butch",["Strong,"Big"],15);
