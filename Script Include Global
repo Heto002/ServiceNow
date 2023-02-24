@@ -1,0 +1,16 @@
+/*
+Client Callable: <Checked>
+*/
+
+functionName: function(){
+
+		var variable1 = this.getParameter('sysparm_clientVariable');
+		var gr = new GlideRecord("sys_user_group");
+		gr.addQuery("sys_id", variable1);
+		gr.query();
+
+		if (gr.next()) {
+			var exampleName= gr.name.getDisplayValue();
+		}
+		return exampleName;
+	}
