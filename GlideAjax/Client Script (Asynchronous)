@@ -1,0 +1,14 @@
+/*
+See Script Include File
+*/
+
+var exampleAjax = new GlideAjax('SomethingUtils');
+exampleAjax.addParam('sysparm_name','functionName');
+exampleAjax.addParam('sysparm_clientVariable', g_form.getValue('formField'));
+exampleAjax.getXML(getResponse);
+
+function getResponse(response){
+  var data = response.responseXML.documentElement.getAttribute('answer');
+  g_form.setValue("formField2",data);
+
+}
