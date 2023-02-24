@@ -8,8 +8,8 @@ var SomethingUtils = Class.create();
 
 SomethingUtils.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
 
-functionName: function(){
-var variable1 = this.getParameter('sysparm_clientVariable');
+	functionName: function(){
+		var variable1 = this.getParameter('sysparm_clientVariable');
 		var gr = new GlideRecord("sys_user_group");
 		gr.addQuery("sys_id", variable1);
 		gr.query();
@@ -18,6 +18,6 @@ var variable1 = this.getParameter('sysparm_clientVariable');
 			var exampleName= gr.name.getDisplayValue();
 		}
 		return exampleName;
-},
-	type: 'SomethingUtils'
+	},
+		type: 'SomethingUtils'
 });
