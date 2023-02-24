@@ -1,0 +1,6 @@
+//Convert String to Object
+var parser = new JSONParser();
+var obj = parser.parse(str);
+
+//Convert Object to String
+var str = JSON.stringify(obj);
