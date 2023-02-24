@@ -1,0 +1,22 @@
+/*
+obj - a variable which contains object type values
+key - can actually be any name, but key would refer to the property of the obj object
+obj[key] - refers to the value of the obj object
+*/
+
+var object = { a: 1, b: 2, c: 3 };
+
+//Displays all properties of the obj object
+for (var key in obj) {
+  gs.print(key);
+}
+
+//Displays all values of the obj object
+for (var key in obj) {
+  gs.print(obj[key]);
+}
+
+//Print current.property
+for (var key in obj) {
+  gs.print(current[obj[key]);
+}
