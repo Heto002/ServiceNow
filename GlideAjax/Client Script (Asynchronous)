@@ -12,3 +12,7 @@ function getResponse(response){
   g_form.setValue("formField2",data);
 
 }
+
+exampleAjax.getXMLAnswer(function(answer){
+  var response = JSON.parse(answer);
+});
