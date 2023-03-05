@@ -1,0 +1,256 @@
+<table style="margin-left: 5.6pt; border-collapse: collapse; border-top: 1px solid black; border-left: 1px solid black; border-right: 1px solid black; width: 100%; height: 21px;">
+<tbody>
+<tr style="height: 21px;">
+<td style="font-size: 10px; font-family: 'Times New Roman', serif; height: 21px; width: 80%;">&nbsp;</td>
+<td style="font-size: 10px; font-family: 'Times New Roman', serif; height: 21px; width: 20%; text-align: right;"><em>Printed: ${Date} &nbsp;</em></td>
+</tr>
+</tbody>
+</table>
+<table style="margin-left: 5.6pt; border-collapse: collapse; border-left: 1px solid black; border-right: 1px solid black; width: 100%; height: 66.4px;">
+<tbody>
+<tr style="height: 66.4px;">
+<td style="width: 22%; height: 66.4px;"><img src="data:image/jpeg;base64,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" alt="image" width="107" height="59" align="baseline" /></td>
+<td style="width: 78%; height: 66.4px;">
+<p style="font-size: 15px; font-family: 'Times New Roman',serif;"><strong><span style="font-size: 26px;">Service, Adds, Moves and Changes Worksheet</span></strong></p>
+</td>
+</tr>
+</tbody>
+</table>
+<table style="margin-left: 5.6pt; border-collapse: collapse; border-bottom: 1px solid black; border-left: 1px solid black; border-right: 1px solid black; width: 100%; height: 168px;">
+<tbody>
+<tr style="height: 21px;">
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 21px; width: 22%;" colspan="1"><strong>Agent PO/RA:</strong></td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 21px; width: 78%;" colspan="5">{agent}</td>
+</tr>
+<tr style="height: 21px;">
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 21px; width: 22%;" colspan="1"><strong>Incident Num:</strong></td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 21px; width: 16%;" colspan="1">${parent.number}</td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 21px; width: 15%;" colspan="1">&nbsp;</td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 21px; width: 20.5%;" colspan="1"><strong>Work Order Num:</strong></td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 21px; width: 24%;" colspan="1">${number}</td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 21px; width: 2.5%;" colspan="1">&nbsp;</td>
+</tr>
+<tr style="height: 21px;">
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 21px; width: 22%;"><strong>Interface Num:</strong></td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 21px; width: 16%;" colspan="1">${parent.number}</td>
+<td style="width: 15%; height: 21px; font-size: 15px; font-family: 'Times New Roman', serif;">&nbsp;</td>
+<td style="width: 20.5%; height: 21px; font-size: 15px; font-family: 'Times New Roman', serif;"><strong>Cust Ref Num:</strong></td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 21px; width: 24%;" colspan="1">${number}</td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 21px; width: 2.5%;" colspan="1">&nbsp;</td>
+</tr>
+<tr style="height: 21px;">
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 21px; width: 22%;" colspan="1"><strong>Expected Start Date:</strong></td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 21px; width: 16%;" colspan="1">${expected_start}</td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 21px; width: 15%;" colspan="1">&nbsp;</td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 21px; width: 20.5%;" colspan="1"><strong>Expected End Date:</strong></td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 21px; width: 24%;" colspan="1">${estimated_end}</td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 21px; width: 2.5%;" colspan="1">&nbsp;</td>
+</tr>
+<tr style="height: 21px; border-bottom: 2px solid black;">
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 21px; width: 22%;" colspan="1"><strong>Technician:</strong></td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 21px; width: 78%;" colspan="5">${assigned_to}</td>
+</tr>
+<tr style="height: 21px; border-top: 2px solid black;">
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 21px; width: 22%; background: whitesmoke;" colspan="1"><strong>Customer ID/Name:</strong></td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 21px; width: 78%; background: whitesmoke;" colspan="5">${u_client_id}</td>
+</tr>
+<tr style="height: 21px;">
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 21px; width: 22%; background: whitesmoke;" colspan="1"><strong>Customer Address:</strong></td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 21px; width: 78%; background: whitesmoke;" colspan="5">${u_location_address_1 }</td>
+</tr>
+<tr style="height: 21px; border-bottom: 1px solid black;">
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 21px; width: 22%; background: whitesmoke;" colspan="1"><strong>Contact Name:</strong></td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 21px; width: 16%; background: whitesmoke;" colspan="1">${u_work_order.contact.name}</td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 21px; width: 15%; background: whitesmoke;" colspan="1">&nbsp;</td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 21px; width: 20.5%; background: whitesmoke;" colspan="1"><strong>Contact Num:</strong></td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 21px; width: 24%; background: whitesmoke;" colspan="1">${u_work_order.contact.phone}</td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 21px; width: 2.5%; background: whitesmoke;" colspan="1">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<table style="margin-left: 5.6pt; border-collapse: collapse; border: 1px solid black; width: 100%; height: 19.4px;">
+<tbody>
+<tr style="height: 19.4px;">
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 19.4px; width: 19%; background: #d2d2d2; border: 2px solid black;"><strong>Technician Name</strong></td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 19.4px; width: 25%; background: #d2d2d2; text-align: center; border: 2px solid black;"><strong>Onsite Time</strong></td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 19.4px; width: 21%; background: #d2d2d2; text-align: center; border: 2px solid black;"><strong>City of</strong></td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 19.4px; width: 22%; background: #d2d2d2; text-align: center; border: 2px solid black;"><strong>Total</strong></td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 19.4px; width: 13%; background: #d2d2d2; border: 2px solid black;"><strong>&nbsp;</strong></td>
+</tr>
+</tbody>
+</table>
+<table style="margin-left: 5.6pt; border-collapse: collapse; border: 1px solid black; width: 100%; height: 103px;">
+<tbody>
+<tr style="height: 40px;">
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 40px; width: 19%; background: #d2d2d2; border: 2px solid black;">&nbsp;</td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 40px; width: 12.5%; background: #d2d2d2; text-align: center; border: 2px solid black;"><strong>Start</strong></td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 40px; width: 12.5%; background: #d2d2d2; text-align: center; border: 2px solid black;"><strong>End</strong></td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 40px; width: 10.5%; background: #d2d2d2; text-align: center; border: 2px solid black;"><strong>Origin</strong></td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 40px; width: 10.5%; background: #d2d2d2; text-align: center; border: 2px solid black;"><strong>Return</strong></td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 40px; width: 11%; background: #d2d2d2; text-align: center; border: 2px solid black;"><strong>Travel Time</strong></td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 40px; width: 11%; background: #d2d2d2; text-align: center; border: 2px solid black;"><strong>KM's</strong></td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 40px; width: 13%; background: #d2d2d2; text-align: center; border: 2px solid black;"><strong>Drive (Y/N)</strong></td>
+</tr>
+<tr style="height: 21px;">
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; width: 19%; border: 2px solid black; height: 21px;">&nbsp;</td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; width: 12.5%; text-align: center; border: 2px solid black; height: 21px;">&nbsp;</td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; width: 12.5%; text-align: center; border: 2px solid black; height: 21px;">&nbsp;</td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; width: 10.5%; text-align: center; border: 2px solid black; height: 21px;">&nbsp;</td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; width: 10.5%; text-align: center; border: 2px solid black; height: 21px;">&nbsp;</td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; width: 11%; text-align: center; border: 2px solid black; height: 21px;">&nbsp;</td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; width: 11%; text-align: center; border: 2px solid black; height: 21px;">&nbsp;</td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; width: 13%; text-align: center; border: 2px solid black; height: 21px;">&nbsp;</td>
+</tr>
+<tr style="height: 21px;">
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; width: 19%; border: 2px solid black; height: 21px;">&nbsp;</td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; width: 12.5%; text-align: center; border: 2px solid black; height: 21px;">&nbsp;</td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; width: 12.5%; text-align: center; border: 2px solid black; height: 21px;">&nbsp;</td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; width: 10.5%; text-align: center; border: 2px solid black; height: 21px;">&nbsp;</td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; width: 10.5%; text-align: center; border: 2px solid black; height: 21px;">&nbsp;</td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; width: 11%; text-align: center; border: 2px solid black; height: 21px;">&nbsp;</td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; width: 11%; text-align: center; border: 2px solid black; height: 21px;">&nbsp;</td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; width: 13%; text-align: center; border: 2px solid black; height: 21px;">&nbsp;</td>
+</tr>
+<tr style="height: 21px;">
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; width: 19%; border: 2px solid black; height: 21px; background: black;" colspan="5">&nbsp;</td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; text-align: center; border: 2px solid black; height: 21px; background: #d2d2d2;" colspan="3"><strong>Replacement</strong></td>
+</tr>
+</tbody>
+</table>
+<table style="margin-left: 5.6pt; border-collapse: collapse; border: 1px solid black; width: 100%; height: 19.4px;">
+<tbody>
+<tr style="height: 21px;">
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 21px; width: 19%; background: #d2d2d2; border: 2px solid black;"><strong>Incident Type</strong></td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 21px; width: 12.5%; background: #d2d2d2; text-align: center; border: 2px solid black;"><strong>Reimage</strong></td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 21px; width: 12.5%; background: #d2d2d2; text-align: center; border: 2px solid black;"><strong>New Install</strong></td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 21px; width: 10.5%; background: #d2d2d2; text-align: center; border: 2px solid black;"><strong>Move</strong></td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 21px; width: 10.5%; background: #d2d2d2; text-align: center; border: 2px solid black;"><strong>Deinstall</strong></td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 21px; width: 17.5%; background: #d2d2d2; text-align: center; border: 2px solid black;" colspan="2"><strong>Equipment</strong></td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 21px; width: 17.5%; background: #d2d2d2; text-align: center; border: 2px solid black;"><strong>Part</strong></td>
+</tr>
+<tr style="height: 21px;">
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 21px; width: 19%; border: 2px solid black;">&nbsp;</td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 21px; width: 12.5%; text-align: center; border: 2px solid black;">&nbsp;</td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 21px; width: 12.5%; text-align: center; border: 2px solid black;">&nbsp;</td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 21px; width: 10.5%; text-align: center; border: 2px solid black;">&nbsp;</td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 21px; width: 10.5%; text-align: center; border: 2px solid black;">&nbsp;</td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 21px; width: 17.5%; text-align: center; border: 2px solid black;" colspan="2">&nbsp;</td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 21px; width: 17.5%; text-align: center; border: 2px solid black;">&nbsp;</td>
+</tr>
+<tr style="height: 21px;">
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 21px; width: 100%; border: 2px solid black; background: black; text-align: center;" colspan="8"><strong><span style="color: white;">DESCRIPTION OF WORK TO BE COMPLETED (Customer Details)</span></strong></td>
+</tr>
+<tr style="height: 210px;">
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 21px; width: 100%; border: 1px solid black; text-align: left; vertical-align: top;" colspan="8"><em><span style="color: black;">${description}</span></em></td>
+</tr>
+<tr style="height: 21px;">
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 21px; width: 100%; border: 2px solid black; background: black; text-align: center;" colspan="8"><strong><span style="color: white;">EXISTING EQUIPMENT INFORMATION (Complete Deinstall Information Entered Below)</span></strong></td>
+</tr>
+<tr style="height: 21px;">
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 21px; width: 19%; background: #d2d2d2; border: 2px solid black;"><strong>Make</strong></td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 21px; width: 12.5%; background: #d2d2d2; text-align: center; border: 2px solid black;"><strong>Model</strong></td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 21px; width: 12.5%; background: #d2d2d2; text-align: center; border: 2px solid black;"><strong>Serial Num</strong></td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 21px; width: 10.5%; background: #d2d2d2; text-align: center; border: 2px solid black;"><strong>Asset Tag</strong></td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 21px; width: 10.5%; background: #d2d2d2; text-align: center; border: 2px solid black;"><strong>User Logon</strong></td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 21px; width: 17.5%; background: #d2d2d2; text-align: center; border: 2px solid black;" colspan="2"><strong>Printer Page Count</strong></td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 21px; width: 17.5%; background: #d2d2d2; text-align: center; border: 2px solid black;"><strong>Server Name</strong></td>
+</tr>
+<tr style="height: 21px;">
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 21px; width: 19%; border: 2px solid black;">&nbsp;</td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 21px; width: 12.5%; text-align: center; border: 2px solid black;">&nbsp;</td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 21px; width: 12.5%; text-align: center; border: 2px solid black;">&nbsp;</td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 21px; width: 10.5%; text-align: center; border: 2px solid black;">&nbsp;</td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 21px; width: 10.5%; text-align: center; border: 2px solid black;">&nbsp;</td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 21px; width: 17.5%; text-align: center; border: 2px solid black;" colspan="2">&nbsp;</td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 21px; width: 17.5%; text-align: center; border: 2px solid black;">&nbsp;</td>
+</tr>
+<tr style="height: 21px;">
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 21px; width: 19%; border: 2px solid black;">&nbsp;</td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 21px; width: 12.5%; text-align: center; border: 2px solid black;">&nbsp;</td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 21px; width: 12.5%; text-align: center; border: 2px solid black;">&nbsp;</td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 21px; width: 10.5%; text-align: center; border: 2px solid black;">&nbsp;</td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 21px; width: 10.5%; text-align: center; border: 2px solid black;">&nbsp;</td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 21px; width: 17.5%; text-align: center; border: 2px solid black;" colspan="2">&nbsp;</td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 21px; width: 17.5%; text-align: center; border: 2px solid black;">&nbsp;</td>
+</tr>
+<tr style="height: 21px;">
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 21px; width: 100%; border: 2px solid black; background: black; text-align: left;" colspan="8"><strong><span style="color: white;">DESCRIPTION OF WORK COMPLETED (Incident Resolution)</span></strong></td>
+</tr>
+<tr style="height: 21px;">
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 21px; width: 100%; border: 2px solid black; text-align: left;" colspan="8">&nbsp;</td>
+</tr>
+<tr style="height: 21px;">
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 21px; width: 100%; border: 2px solid black; text-align: left;" colspan="8">&nbsp;</td>
+</tr>
+<tr style="height: 21px;">
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 21px; width: 19%; background: #d2d2d2; border: 2px solid black;"><strong>Part Number Used</strong></td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 21px; width: 12.5%; background: #d2d2d2; text-align: center; border: 2px solid black;"><strong>Quantity</strong></td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 21px; width: 68.5%; background: #d2d2d2; border: 2px solid black; text-align: left;" colspan="6"><strong>Description</strong></td>
+</tr>
+<tr style="height: 21px;">
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 21px; width: 19%; border: 2px solid black;">&nbsp;</td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 21px; width: 12.5%; text-align: center; border: 2px solid black;">&nbsp;</td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 21px; width: 68.5%; border: 2px solid black; text-align: left;" colspan="6">&nbsp;</td>
+</tr>
+<tr style="height: 21px;">
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 21px; width: 19%; border: 2px solid black;">&nbsp;</td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 21px; width: 12.5%; text-align: center; border: 2px solid black;">&nbsp;</td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 21px; width: 68.5%; border: 2px solid black; text-align: left;" colspan="6">&nbsp;</td>
+</tr>
+<tr style="height: 21px;">
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 21px; width: 100%; border: 2px solid black; background: black; text-align: center;" colspan="8"><strong><span style="color: white;">REPLACEMENT (Service Spare/New Install) EQUIPMENT INFORMATION</span></strong></td>
+</tr>
+<tr style="height: 21px;">
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 21px; width: 19%; background: #d2d2d2; border: 2px solid black;"><strong>Technician Type</strong></td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 21px; width: 12.5%; background: #d2d2d2; text-align: center; border: 2px solid black;"><strong>Model</strong></td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 21px; width: 12.5%; background: #d2d2d2; text-align: center; border: 2px solid black;"><strong>Serial Num</strong></td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 21px; width: 10.5%; background: #d2d2d2; text-align: center; border: 2px solid black;"><strong>Asset Tag</strong></td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 21px; width: 10.5%; background: #d2d2d2; text-align: center; border: 2px solid black;"><strong>Server Name</strong></td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 21px; width: 17.5%; background: #d2d2d2; text-align: center; border: 2px solid black;" colspan="2"><strong>User Logon</strong></td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 21px; width: 17.5%; background: #d2d2d2; text-align: center; border: 2px solid black;"><strong>Work Order</strong></td>
+</tr>
+<tr style="height: 21px;">
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 21px; width: 19%; border: 2px solid black;">&nbsp;</td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 21px; width: 12.5%; text-align: center; border: 2px solid black;">&nbsp;</td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 21px; width: 12.5%; text-align: center; border: 2px solid black;">&nbsp;</td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 21px; width: 10.5%; text-align: center; border: 2px solid black;">&nbsp;</td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 21px; width: 10.5%; text-align: center; border: 2px solid black;">&nbsp;</td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 21px; width: 17.5%; text-align: center; border: 2px solid black;" colspan="2">&nbsp;</td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 21px; width: 17.5%; text-align: center; border: 2px solid black;">&nbsp;</td>
+</tr>
+<tr style="height: 21px;">
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 21px; width: 19%; border: 2px solid black;">&nbsp;</td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 21px; width: 12.5%; text-align: center; border: 2px solid black;">&nbsp;</td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 21px; width: 12.5%; text-align: center; border: 2px solid black;">&nbsp;</td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 21px; width: 10.5%; text-align: center; border: 2px solid black;">&nbsp;</td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 21px; width: 10.5%; text-align: center; border: 2px solid black;">&nbsp;</td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 21px; width: 17.5%; text-align: center; border: 2px solid black;" colspan="2">&nbsp;</td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 21px; width: 17.5%; text-align: center; border: 2px solid black;">&nbsp;</td>
+</tr>
+<tr style="height: 21px;">
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 21px; width: 100%; border: 2px solid black; background: black; text-align: center;" colspan="8"><strong><span style="color: white;">OUT-OF-SCOPE WORK ENCOUNTERED DURING INSTALLATION</span></strong></td>
+</tr>
+<tr style="height: 21px;">
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 21px; width: 100%; border: 2px solid black; text-align: left;" colspan="8">&nbsp;</td>
+</tr>
+<tr style="height: 21px;">
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 21px; width: 100%; border: 2px solid black; text-align: left;" colspan="8">&nbsp;</td>
+</tr>
+<tr style="height: 21px;">
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 21px; width: 100%; border: 2px solid black; background: black; text-align: center;" colspan="8"><strong><span style="color: white;">CUSTOMER COMMENTS</span></strong></td>
+</tr>
+</tbody>
+</table>
+<table style="margin-left: 5.6pt; border-collapse: collapse; border: 1px solid black; width: 100%; height: 42px;">
+<tbody>
+<tr style="height: 42px;">
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 42px; width: 16%;" colspan="1"><strong>Customer Name:</strong></td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 42px; width: 22%;" colspan="1">&nbsp;</td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 42px; width: 15%;" colspan="1"><strong>Signature:</strong></td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 42px; width: 20.5%;" colspan="1">&nbsp;</td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 42px; width: 12.5%;" colspan="1"><strong>Date:</strong></td>
+<td style="font-size: 15px; font-family: 'Times New Roman', serif; height: 42px; width: 14%;" colspan="1">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
