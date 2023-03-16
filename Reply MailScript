@@ -1,0 +1,22 @@
+/************************************************
+//The email object if for testing purposes
+var email = {
+    "subject":"This is the subject of an email",
+    "body_text":"This is the body of an email",
+    "watermark":"JKLiouHKLkjKLJioUjlkLJklIlkjLKjl"
+}
+*************************************************/
+
+var subject = email.subject;
+
+//Replace all spaces in the string with %20
+var newSubject = subject.replace(/ /g, "%20");
+
+//Get the instance name
+var instance = gs.getProperty("instance_name") + "@servicenow.com";
+
+//Build the mailto link with watermark
+var mailLink = "mailto:" + instance + "?subject=re:" + newSubject + "%20"+ email.watermark;
+
+//use template.print() instead of gs.print()
+gs.print('<a href=' + mailLink + '>Click here to reply</a>');
