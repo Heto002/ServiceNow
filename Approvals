@@ -1,0 +1,23 @@
+var approvedState = false;
+var approvalGr = new GlideRecord("sysapproval_approver");
+approvalGr.addQuery("sysapproval",current.sysapproval);
+approvalGr.query();
+
+while(approvalGr.next()){
+    if(approvalGr.state == "approved"){
+        approvedState = true;
+    }
+}
+
+if(approvedState == true){
+    var tsp2Demand = new GlideRecord("tsp2_demand");
+    if(tsp2Demand.get(current.sysapproval)){
+        if(tsp2Demand.u_it_group == "run" && tsp2Demand.category == "strategic" && tsp2Demand.u_it_approved == false){
+            tsp2Demand.u_it_approved = true;
+        }
+        else{
+            tsp2Demand.state = 8;
+        }
+        tsp2Demand.update();
+    }
+}
