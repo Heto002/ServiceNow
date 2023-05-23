@@ -1,0 +1,12 @@
+Create a client script with the following code:
+/***************************************************************************************/
+function onLoad() {
+    var url = top.location.href;
+    var exampleVariable = new URLSearchParams(url).get("sysparm_variable_name");
+    if (exampleVariable != "" && exampleVariable != null)
+        g_form.setValue('variable_name', exampleVariable);
+}
+
+/***************************************************************************************/
+
+Use the regular catalog item url but add on the parameter of "&sysparm_variable_name=this_is_a_value"
