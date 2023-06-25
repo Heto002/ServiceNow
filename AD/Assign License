@@ -1,0 +1,40 @@
+$Alias = "${activityInput.Alias}"
+
+
+#Adds user to AD Group to assign o365 license
+try {
+# Waits 2 minutes for Domain Controler Sync process between DC01, DC02, and DC03
+For($I=120; $I -gt 0; $I--)
+			{
+		Write-Progress -Activity "Waiting for Sync in Domain Controller in Forest" -Status "Progress" -SecondsRemaining $I -PercentComplete ((120-$I)/120*100)
+		Start-Sleep -s 1
+		}
+		
+
+Import-Module ActiveDirectory
+[array]$grps=Get-ADUser $alias -Property memberOf | Select -ExpandProperty memberOf | Get-ADGroup | Select Name
+If ($grps.Name -notcontains "ADGroupName") {
+
+Add-ADGroupMember -Credential $cred -Identity "ADGroupName" -Members $alias
+						}
+Else {
+Write-Host -foregroundcolor Red "User is already a member of the required Group. Please confirm the user only has 1 mailbox in the organization. Script will attempt to continue."
+	}
+
+If ($grps.Name -notcontains "LIC-M365A3") {
+
+Add-ADGroupMember  -Credential $cred  -Identity "LIC-M365A3" -Members $alias
+						}
+Else {
+Write-Host -foregroundcolor Red -backgroundcolor DarkBlue "User is already a member of the required LIC-M365A3 Group. Please confirm the user only has 1 mailbox in the organization. Script will attempt to continue."
+	}
+
+	
+	
+	}
+catch
+	{
+	Write-Host -foregroundcolor Green "An error occured while adding licenses. $_.Exception"
+	Return
+	}
+Write-Host -foregroundcolor Green "Licenses Applied Successfully."
