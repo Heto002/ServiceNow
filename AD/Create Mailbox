@@ -1,0 +1,42 @@
+$User = "${activityInput.ServiceAccount}"
+$PasswordFile = "${activityInput.PasswordFile}"
+$KeyFile = "${activityInput.KeyFile}"
+
+$Key = Get-Content $KeyFile
+$RemoteExchangeCred = New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList $User, (Get-Content $PasswordFile | ConvertTo-SecureString -Key $Key)
+$localurl ="${activityInput.LocalURL}"
+$Alias = "${activityInput.Alias}"
+
+
+try
+	{
+
+# Waits 3 minutes for Domain Controler Sync process between DC01, DC02, and DC03
+For($I=180; $I -gt 0; $I--)
+		{
+		Write-Progress -Activity "Waiting for Sync in Domain Controller in Forest" -Status "Progress" -SecondsRemaining $I -PercentComplete ((180-$I)/180*100)
+		Start-Sleep -s 1
+		}
+
+	Write-Host -foregroundcolor Green "Creating Mailbox"
+	Get-PSSession | Remove-PSSession
+	$Session = New-PSSession -ConfigurationName Microsoft.Exchange -ConnectionUri $localurl -Authentication Kerberos -Credential $RemoteExchangeCred
+	Import-PSSession $Session
+	Enable-Mailbox $Alias -ErrorAction SilentlyContinue | Out-Null
+	Set-mailbox  -identity $Alias -EmailAddressPOlicyEnabled $false
+	$address = $alias + "@cuc.testmail.net"
+	Set-Mailbox -Identity $Alias -EmailAddresses @{Remove=$address}
+	#	Enable-Mailbox $Alias -Archive | Out-Null
+		Remove-PSSession $Session
+								
+	}
+	
+catch
+	{
+	Write-Host -foregroundcolor Green "An error occured during the creaton of the mailbox. $_.Exception"
+	Return
+	}
+Finally {
+Get-PSSession | Remove-PSSession
+}	
+Write-Host -foregroundcolor Green "The local Mailbox was created successfully."
