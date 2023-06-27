@@ -1,0 +1,23 @@
+var strDate = '10-jun-2089';
+
+var gDate = new GlideDate();
+gs.info(gDate.setDisplayValue(strDate));
+
+gs.info(gDate.getByFormat('yyyy-MM-dd HH:mm:ss'));
+gs.info(gDate.getByFormat('MMM dd, yyyy HH:mm:ss'));
+gs.info(gDate.getByFormat('dd-MMM-yyyy'));
+
+
+var date = '20/07/2020 8:00:10 AM';
+var gdt = new GlideDateTime();
+gdt.setDisplayValue(date, "dd/MM/yyyy K:mm:ss a");
+var dateTimeForField = gdt.getDisplayValue();
+gs.info('d: ' + dateTimeForField);
+
+
+var date = '10-jun-2089';
+var gdt = new GlideDate();
+gdt.setDisplayValue(date, "dd-MMM-yyyy");
+var dateTimeForField = gdt.getDisplayValue();
+gs.info('d: ' + gdt);
+gs.info(gdt.getByFormat('dd-MMM-yyyy'));
