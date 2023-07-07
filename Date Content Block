@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+	<script>
+		var my_dashboardMessageHandler = new DashboardMessageHandler("my_unique_id");
+
+		function publishFilter (startDate,endDate,limit) {
+		alert(startDate + "\n" + endDate + "\n" + limit);
+		var filter_message = {};
+		filter_message.id = "my_unique_id";
+		filter_message.table = "task";
+
+		<!--     Add your own filter query logic here -->
+		var query1 = "";
+		if(startDate != "" ${AMP}${AMP} endDate != ""){
+		query1 = "sys_created_onBETWEENjavascript:gs.dateGenerate('" + startDate + "')@javascript:gs.dateGenerate('" + endDate + "')";
+		}
+
+		else if(startDate != "" ${AMP}${AMP} endDate == ""){
+		query1 = "sys_created_on>javascript:gs.dateGenerate('" + startDate + "')";
+		}
+
+		else if(startDate == "" ${AMP}${AMP} endDate != ""){
+
+		query1 = "sys_created_on!>javascript:gs.dateGenerate('" + endDate + "')";
+		}
+
+		alert(query1);
+		filter_message.filter = query1;
+		SNC.canvas.interactiveFilters.setDefaultValue({
+		id: filter_message.id,
+		filters: [filter_message]
+		}, false);
+		my_dashboardMessageHandler.publishFilter(filter_message.table, filter_message.filter);
+		}
+
+		function clearFilter() {
+		var filter_message = {};
+		filter_message.id = "my_unique_id";
+		filter_message.table = "task";
+		filter_message.filter = "";
+		SNC.canvas.interactiveFilters.setDefaultValue({
+		id: filter_message.id,
+		filters: [filter_message]
+		}, false);
+		my_dashboardMessageHandler.removeFilter();
+
+		project_start_date.value = "";
+		project_end_date.value = "";
+		limiter.value = "";
+		}
+
+	</script>   
+
+	Please choose the start and end time: <br/>
+	Created after:
+
+	<g:ui_date_time name="project_start_date" value="${jvar_start_date}"/>
+
+	Created before:
+	<g:ui_date_time name="project_end_date" value="${jvar_end_date}"/><br/>
+
+	Top:
+	<input id="limiter" name="limit" type="text" value="limit"/><br/>
+
+	<input id="allTasks" type="button" value="Clear" onclick="clearFilter();" />
+	<input id="applyFilter" type="button" value="Apply" onclick="publishFilter(project_start_date.value,project_end_date.value,limiter.value)" />
+
+</j:jelly>
