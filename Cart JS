@@ -1,0 +1,20 @@
+//Initialize Cart JS object
+var cart = new sn_sc.CartJS();
+//Store item information in JSON
+		var item =
+			{
+				//Catalog Item Sys ID
+				'sysparm_id': "catalogItemSysID",
+        //Quantity
+				'sysparm_quantity': '1',
+        //Store variable information in JSON
+				'variables':{
+					'v_requested_for': current.servicenow_user.toString(),
+					'v_remove_access': 'true'
+				}};
+
+//View Cart Details
+var cartDetails = cart.addToCart(item);
+
+//View REQ created
+var checkoutInfo = cart.checkoutCart();
