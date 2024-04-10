@@ -1,0 +1,5 @@
+var gr = new GlideRecord("table_name");
+gr.get("sys_id");
+
+var um = new GlideUpdateManager2();
+um.saveRecord(gr);
