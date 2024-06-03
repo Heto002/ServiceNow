@@ -1,0 +1,47 @@
+/*
+Action Input:
+  - Label: Array.String
+  - Name: array_string
+  - Type: Array.String
+*/
+
+/*
+Script Step
+Input Variables:
+- Name: arrString
+- Value: action > Array.String
+
+Output Variables:
+- Label: JSON String
+- Name: json_string
+- Type: String
+*/
+
+Script:
+(function execute(inputs, outputs) {
+// ... code ...
+var jsonstr = inputs.arrString;
+
+var obj = {};
+
+for(var i=0; i<jsonstr.length;i++){
+	gs.info(jsonstr[i]);
+    obj[jsonstr[i]] = jsonstr[i+1];
+	i++;
+}
+
+var jsonSTR = JSON.stringify(obj);
+
+//outputs.json_string = jsonstr;
+outputs.json_string = JSON.stringify(obj);
+
+})(inputs, outputs);
+
+/*
+Action Output
+- Label: JSON
+- Name: variable
+- Type: String
+- Value: step > Script step > JSON String
+*/
+
