@@ -52,7 +52,7 @@ UnauthorizedAppAjax.prototype = Object.extendsObject(AbstractAjaxProcessor, {
     type: 'UnauthorizedAppAjax'
 });
 
-//Client Script
+//UI Policy
 function onCondition() {
     //GlideAjax
     var gAjax = new GlideAjax("UnauthorizedAppAjax");
