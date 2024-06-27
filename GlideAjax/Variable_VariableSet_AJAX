@@ -1,0 +1,84 @@
+//Script Include
+var UnauthorizedAppAjax = Class.create();
+UnauthorizedAppAjax.prototype = Object.extendsObject(AbstractAjaxProcessor, {
+
+    /*_________________________________________________________________
+    	* Description: Check whether current catalog item is UnAuthorized
+    	* Parameters: N/A
+    	* Returns: JSON Payload of variable/variable set names. Or false
+    	________________________________________________________________*/
+    checkUnauthorization: function() {
+        //Get Catalog Item SysID from Client Script
+        var catalogItemID = this.getParameter("sysparm_catalog_item_id");
+
+        //Query the Catalog Item
+        var catalogItemGR = new GlideRecord("x_fls_appportal_catalog_items");
+        catalogItemGR.addQuery("sys_id", catalogItemID);
+        catalogItemGR.query();
+        if (catalogItemGR.next() && catalogItemGR.ap_category == "Unauthorized") {
+
+            var obj = {};
+            var variableArr = [];
+            var variableSetArr = [];
+
+            //Query the Variables table
+            var variableGR = new GlideRecord("item_option_new");
+            variableGR.addEncodedQuery("cat_item=" + catalogItemID);
+            variableGR.query();
+
+            while (variableGR.next()) {
+                variableArr.push(variableGR.name.toString());
+            }
+
+            //Query the Variable Set table
+            var variableSetGR = new GlideRecord("io_set_item");
+            variableSetGR.addEncodedQuery("sc_cat_item=" + catalogItemID);
+            variableSetGR.query();
+
+            while (variableSetGR.next()) {
+                variableSetArr.push(variableSetGR.variable_set.internal_name.toString());
+            }
+
+            obj.variables = variableArr.toString();
+            obj.variableSet = variableSetArr.toString();
+
+            return JSON.stringify(obj);
+
+        } else {
+            return false;
+        }
+    },
+
+    type: 'UnauthorizedAppAjax'
+});
+
+//Client Script
+function onCondition() {
+    //GlideAjax
+    var gAjax = new GlideAjax("UnauthorizedAppAjax");
+    gAjax.addParam("sysparm_name", "checkUnauthorization");
+    gAjax.addParam("sysparm_catalog_item_id", g_form.getUniqueValue());
+
+    gAjax.getXMLAnswer(function(answer) {
+
+        var obj = JSON.parse(answer);
+
+        if (obj != false) {
+            var variableArr = obj.variables.split(",");
+            for (var i = 0; i < variableArr.length; i++) {
+                g_form.setMandatory(variableArr[j], false);
+                g_form.setVisible(variableArr[i], false);
+            }
+
+            var variableSetArr = obj.variableSet.split(",");
+            for (var j = 0; j < variableSetArr.length; j++) {
+
+                if (variableSetArr[j].toString() != "unauthorized_apps") {
+                    alert(variableSetArr[j]);
+                    g_form.setMandatory(variableSetArr[j], false);
+                    g_form.setDisplay(variableSetArr[j], false);
+                }
+            }
+        }
+    });
+}
