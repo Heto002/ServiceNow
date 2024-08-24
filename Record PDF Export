@@ -1,0 +1,60 @@
+/**
+This code is intended to be a UI action, where a user is able to capture fields into a PDF and would have more control over specifics such as formatting, hidden fields and related lists.
+As for the Use Case, this is beneficial for Auditors, as it allows the user to keep track of information as snapshots throughout the record lifecycle.
+In this sample, it was intended for the Catalog Task table, so you will need to change the table and fields as needed.
+**/
+
+var v = new sn_pdfgeneratorutils.PDFGenerationAPI;
+
+//String variable that will contain the HTML code
+var html;
+
+//Set Table Name, 4 columns{Field Label1, Field Value1, Field Label2, Field Value2}, new line and repeat
+html = '<table style="border-collapse: collapse; width: 100%; background-color: #6699CC;" border="1"> <tbody> <tr> <td style="width: 98.1616%;"><strong><span style="color: #ffffff;">Catalog Task</span></strong></td> </tr> </tbody> </table> <table style="border-collapse: collapse; width: 100%;" border="1"> <tbody> <tr> <td style="width: 23.2549%; background-color: #d6d6d6;">Number:</td> <td style="width: 23.2549%;">' + current.number + '</td> <td style="width: 23.2549%; background-color: #d6d6d6;">Approval</td> <td style="width: 23.2549%;">' + current.approval.getDisplayValue() + '</td> </tr> <tr> <td style="width: 23.2549%; background-color: #d6d6d6;">Assignment group:</td> <td style="width: 23.2549%;"> ' + current.assignment_group.getDisplayValue() + '</td> <td style="width: 23.2549%; background-color: #d6d6d6;">Priority:</td> <td style="width: 23.2549%;">' + current.priority.getDisplayValue() + '</td> </tr> <tr> <td style="width: 23.2549%; background-color: #d6d6d6;">Assigned to:</td> <td style="width: 23.2549%;"> ' + current.assigned_to.getDisplayValue() + '</td> <td style="width: 23.2549%; background-color: #d6d6d6;">State:</td> <td style="width: 23.2549%;">' + current.state.getDisplayValue() + '</td> </tr> <tr> <td style="width: 23.2549%; background-color: #d6d6d6;">Configuration item:</td> <td style="width: 23.2549%;">' + current.cmdb_ci.getDisplayValue() + '</td> <td style="width: 23.2549%; background-color: #d6d6d6;">Request item:</td> <td style="width: 23.2549%;">' + current.request_item.getDisplayValue() + '</td> </tr> <tr> <td style="width: 23.2549%; background-color: #d6d6d6;">Active:</td> <td style="width: 23.2549%;">' + current.active + '</td> <td style="width: 23.2549%; background-color: #d6d6d6;">Request item Requested for:</td> <td style="width: 23.2549%;">' + current.request_item.requested_for.getDisplayValue() + '</td> </tr> </tbody> </table> <table style="border-collapse: collapse; width: 100%;" border="1"> <tbody> <tr> <td style="width: 24.9841%; background-color: #d6d6d6;">Short description:</td> <td style="width: 75.0159%;">' + current.short_description + '</td> </tr> </tbody> </table> <table style="border-collapse: collapse; width: 100%; height: 82.7812px;" border="1"> <tbody> <tr style="height: 15.3906px;"> <td style="width: 98.1616%; height: 15.3906px; background-color: #d6d6d6;">Description:</td> </tr> <tr style="height: 67.3906px;"> <td style="width: 98.1616%; height: 67.3906px;">' + current.description + '</td> </tr> </tbody> </table>' 
+
+//HTML for Work notes
+html += '<table style="border-collapse: collapse; width: 100%;" border="1"> <tbody> <tr> <td style="width: 98.1219%; background-color: #d6d6d6;">Work notes:</td> </tr> <tr> <td style="width: 98.1219%; background-color: #faf7bf;">';
+
+var workNotes = current.work_notes.getJournalEntry(-1);
+var wn = workNotes.split("\n\n");
+
+//Stores each entry into an array of strings
+for (var i = 0; i < wn.length; i++)
+    html += wn[i] + '<br/>';
+
+//HTML closing code for Work notes
+html += '</td> </tr> </tbody> </table>';
+
+//HTML for Additional comments
+html += '<table style="border-collapse: collapse; width: 100%;" border="1"> <tbody> <tr> <td style="width: 98.1219%; background-color: #d6d6d6;">Additional Comments</td> </tr> <tr> <td style="width: 98.1219%;">';
+
+var additionalComments = current.comments.getJournalEntry(-1);
+var ac = workNotes.split("\n\n");
+
+//Stores each entry into an array of strings
+for (var i = 0; i < ac.length; i++)
+    html += ac[i] + '<br/>';
+
+//HTML closing code for Additional comments
+html += '</td> </tr> </tbody> </table>';
+
+//HTML code for the list of Approvers
+html += '<table style="border-collapse: collapse; width: 100%;" border="1"> <tbody> <tr> <td style="width: 98.1219%; background-color: #d6d6d6;">Approvers</td> </tr> <tr> <td style="width: 98.1219%;">';
+var approvalcurrent = new GlideRecord("sysapproval_approver");
+approvalcurrent.addQuery("sysapproval", current.request_item.sys_id);
+approvalcurrent.query();
+
+while (approvalcurrent.next()) {
+    html += approvalcurrent.approver.getDisplayValue() + ' - ' + approvalcurrent.state.getDisplayValue() + '<br/>';
+}
+
+//HTML closing code for the list of Approvers
+html += '</td> </tr> </tbody> </table>';
+
+//Attach the generated PDF to the current record
+var result = v.convertToPDF(html, "sc_task", current.sys_id, current.number);
+
+action.setRedirectURL("/download_all_attachments.do?sysparm_sys_id=" + current.sys_id);
+
+var wf1 = new Workflow();
+wf1.startFlow(wf1.getWorkflowFromName('Delete attachment'), current, 'update');
