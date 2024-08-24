@@ -7,6 +7,7 @@ Action Input
 
 
 Script Step
+
 Input Variables
   - catalog_item_sys_id | {{Input Variables.catalog_item.sys_id}}
   - quantity | {{Input Variables.quantity}}
