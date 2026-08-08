@@ -1,0 +1,18 @@
+var x = new GlideRecord('u_temp_cibc_assets');
+x.addEncodedQuery('u_substate=available^sys_import_state=updated');
+x.query();
+while(x.next()){
+    new GlideHistorySet(x.sys_target_table.getValue(), x.sys_target_sys_id.getValue()).generate();
+    var grHist = new GlideRecord('sys_history_line');
+    grHist.addQuery('user_name','Web Service');
+    grHist.addQuery('field','substatus');
+    grHist.addQuery('old','Defective');
+    grHist.addQuery('new','Available');
+    grHist.addQuery('set.id',x.getUniqueValue());
+    grHist.orderBy('update_time');
+    grHist.setLimit(1);
+    grHist.query();
+    if(grHist.next()){
+        gs.print(x.getUniqueValue());
+    }
+}
