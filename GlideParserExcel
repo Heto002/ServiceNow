@@ -1,0 +1,71 @@
+var parser = new sn_impex.GlideExcelParser();
+
+var attachment = new GlideSysAttachment();
+
+// Use the attachment sys_id of an Excel file
+var attachmentStream = attachment.getContentStream("6ac014de1b7b3110dd15a8ecbc4bcb28");
+
+// Set the source to be parsed
+parser.setSource(attachmentStream);
+
+// Get the worksheet names to be parsed in the Excel document
+var list_sheet_name = parser.getSheetNames();
+
+var arr = [];
+
+// Iterate over each worksheet in the Excel workbook
+for (var i = 0; i < list_sheet_name.length; i++) {
+    arr.push(list_sheet_name[i].toString());
+}
+
+//gs.print(arr[2]);
+
+// Set the worksheet name to be parsed
+    parser.setSheetName(arr[2]);
+
+// Parse each worksheet set using setSheetName()
+    if (parser.parse()) {
+        //retrieve the column headers
+        var headers = parser.getColumnHeaders();
+        var header1 = headers[0];
+        var header2 = headers[1];
+        var header3 = headers[2];
+        var header4 = headers[3];
+        var header5 = headers[4];
+        var header6 = headers[5];
+        var header7 = headers[6];
+        var header8 = headers[7];
+        var header9 = headers[8];
+        var header10 = headers[9];
+
+        var columnNameArr = [];
+        for(var i=0;i<headers.length;i++){
+            columnNameArr.push(headers[i])
+        }
+
+        //gs.print(columnNameArr);
+        var rowCollectorArr = [];
+        var counter = 1;
+        // Iterate over each row in the worksheet
+        while (parser.next()) {
+            var row = parser.getRow();
+            var obj = {};
+
+            //print row value for both columns  
+            for(var i=0;i< columnNameArr.length;i++){
+                obj[columnNameArr[i]] = row[columnNameArr[i]];
+                
+                //gs.info(columnNameArr[i]);
+                //gs.info(row[columnNameArr[i]]);
+            }
+
+            counter++;
+            rowCollectorArr.push(JSON.stringify(obj));
+        }
+    } 
+    else{
+        gs.info(parser.getErrorMessage());
+    }
+
+        //gs.print(JSON.stringify(obj));
+        gs.print("[" + rowCollectorArr + "]");
