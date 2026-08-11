@@ -1,0 +1,58 @@
+//Name of Subscription
+var subscriptionName = "Customer Service Management Professional";
+
+//SysID of Subscription
+var subscriptionSysID = "b4b02facdbd202109ce63fd3e2961973";
+
+var subscriptionEntitlementGR = new GlideRecord("subscription_entitlement");
+
+//Choose between Name or SysID
+subscriptionEntitlementGR.get("name", subscriptionName);
+//subscriptionEntitlementGR.get(subscriptionSysID);
+
+var measuredRoleTypesSysIDArr = subscriptionEntitlementGR.measured_role_types.split(",");
+var measuredRoleTypesNameArr = [];
+
+var licenseRoleTypeGR = new GlideRecord("license_role_type");
+licenseRoleTypeGR.addEncodedQuery("sys_idIN" + measuredRoleTypesSysIDArr.join(","));
+licenseRoleTypeGR.query();
+
+while (licenseRoleTypeGR.next()) {
+    measuredRoleTypesNameArr.push(licenseRoleTypeGR.id.toString());
+}
+
+var subscriptionRolesArr = [];
+
+var licenseApplicationRolesGA = new GlideAggregate("sn_sub_man_license_application_roles");
+var encodedQuery = "saf_subscription.sys_id=" + subscriptionEntitlementGR.sys_id;
+
+for (var i = 0; i < measuredRoleTypesNameArr.length; i++) {
+    if (i == 0) {
+        encodedQuery += "^sr_license_role_type=" + measuredRoleTypesNameArr[i];
+    } else {
+        encodedQuery += "^ORsr_license_role_type=" + measuredRoleTypesNameArr[i];
+    }
+}
+
+licenseApplicationRolesGA.addEncodedQuery(encodedQuery);
+licenseApplicationRolesGA.groupBy("sr_name");
+licenseApplicationRolesGA.orderBy("sr_name");
+licenseApplicationRolesGA.query();
+
+while (licenseApplicationRolesGA.next()) {
+    subscriptionRolesArr.push(licenseApplicationRolesGA.getValue("sr_name"));
+}
+
+
+var userRolesGA = new GlideAggregate("sys_user_has_role");
+userRolesGA.addEncodedQuery("role.nameIN" + subscriptionRolesArr.join(",") + "^user.active=true^user.last_login_timeRELATIVEGT@dayofweek@ago@365");
+userRolesGA.groupBy("user.user_name");
+userRolesGA.orderBy("user.user_name");
+userRolesGA.query();
+
+gs.print("Count of Users: " + userRolesGA.getRowCount());
+
+while (userRolesGA.next()) {
+    gs.print("User ID: " + userRolesGA.getValue("user.user_name"));
+}
+
